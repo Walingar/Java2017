@@ -12,6 +12,7 @@ public class ArrayQueueModule {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
         for(int i = 0; i < size - 1; i++) {
+<<<<<<< HEAD:Third homework/ArrayQueueModule.java
             builder.append(elements[(i + tail) % elements.length].toString());
             builder.append(", ");
         }
@@ -20,6 +21,17 @@ public class ArrayQueueModule {
         }
         builder.append("]");
         return builder.toString();
+=======
+            builder.append("'");
+            builder.append(elements[i].toString());
+            builder.append("', ");
+        }
+        if (size > 0) {
+            builder.append("'" + elements[size - 1].toString() + "'");     
+        }
+        builder.append("]");           
+        return builder.toString();    
+>>>>>>> origin/master:ThirdHomeWork/ArrayQueueModule.java
     }
     //Post: R = ['head', ..., 'tail'] && (a' == a) && (n' == n)
 

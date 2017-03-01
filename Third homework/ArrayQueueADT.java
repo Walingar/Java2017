@@ -6,12 +6,17 @@ public class ArrayQueueADT {
     private Object[] elements = new Object[5];
     private int head = 0;
     private int tail = 0;
+<<<<<<< HEAD:Third homework/ArrayQueueADT.java
 
+=======
+    
+>>>>>>> origin/master:ThirdHomeWork/ArrayQueueADT.java
     //Pre: true && queue != null
     public static String toStr(ArrayQueueADT queue) {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
         for(int i = 0; i < queue.size - 1; i++) {
+<<<<<<< HEAD:Third homework/ArrayQueueADT.java
             builder.append(queue.elements[(i + queue.tail) % queue.elements.length].toString());
             builder.append(", ");
         }
@@ -23,6 +28,20 @@ public class ArrayQueueADT {
     }
     //Post: R = ['head', ..., 'tail'] && (a' == a) && (n' == n)
 
+=======
+            builder.append("'");
+            builder.append(queue.elements[i].toString());
+            builder.append("', ");
+        }
+        if (queue.size > 0) {
+            builder.append("'" + queue.elements[queue.size - 1].toString() + "'");     
+        }
+        builder.append("]");           
+        return builder.toString();    
+    }
+    //Post: R = ['head', ..., 'tail'] && (a' == a) && (n' == n)
+    
+>>>>>>> origin/master:ThirdHomeWork/ArrayQueueADT.java
     // Pre: element != null && queue != null
     public static void enqueue(ArrayQueueADT queue, Object element) {
         assert element != null;
@@ -32,7 +51,7 @@ public class ArrayQueueADT {
     }
     // Post: (n' == n + 1) && (a'[i] == a[i] for i = 0 .. n - 1) && (a'[n] == element)
 
-    // Pre: capacity >= 0 && queue != null
+    // Pre: capacity > 0 && queue != null
     private static void ensureCapacity(ArrayQueueADT queue, int capacity) {
         if (capacity <= queue.elements.length) {
             return;
