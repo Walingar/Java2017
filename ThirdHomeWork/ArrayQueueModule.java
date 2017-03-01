@@ -10,9 +10,9 @@ public class ArrayQueueModule {
     //Pre: true
     public static String toStr() {
         StringBuilder builder = new StringBuilder();
-        builder.append("'");
+        builder.append("[");
         for(int i = 0; i < size - 1; i++) {
-            builder.append("[");
+            builder.append("'");
             builder.append(elements[i].toString());
             builder.append("', ");
         }
