@@ -7,6 +7,22 @@ public class ArrayQueueModule {
     private static int head = 0;
     private static int tail = 0;
 
+    //Pre: true
+    public static String toStr() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        for(int i = 0; i < size - 1; i++) {
+            builder.append(elements[(i + tail) % elements.length].toString());
+            builder.append(", ");
+        }
+        if (size > 0) {
+            builder.append(elements[(tail + size - 1) % elements.length].toString());
+        }
+        builder.append("]");
+        return builder.toString();
+    }
+    //Post: R = ['head', ..., 'tail'] && (a' == a) && (n' == n)
+
     // Pre: element != null
     public static void enqueue(Object element) {
         assert element != null;

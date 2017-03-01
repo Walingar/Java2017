@@ -7,6 +7,22 @@ public class ArrayQueueADT {
     private int head = 0;
     private int tail = 0;
 
+    //Pre: true && queue != null
+    public static String toStr(ArrayQueueADT queue) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        for(int i = 0; i < queue.size - 1; i++) {
+            builder.append(queue.elements[(i + queue.tail) % queue.elements.length].toString());
+            builder.append(", ");
+        }
+        if (queue.size > 0) {
+            builder.append(queue.elements[(queue.tail + queue.size - 1) % queue.elements.length].toString());
+        }
+        builder.append("]");
+        return builder.toString();
+    }
+    //Post: R = ['head', ..., 'tail'] && (a' == a) && (n' == n)
+
     // Pre: element != null && queue != null
     public static void enqueue(ArrayQueueADT queue, Object element) {
         assert element != null;
