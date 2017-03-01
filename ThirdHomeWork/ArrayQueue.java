@@ -10,7 +10,7 @@ public class ArrayQueue {
     //Pre: true
     public String toStr() {
         StringBuilder builder = new StringBuilder();
-        builder.append("'");
+        builder.append("[");
         for(int i = 0; i < size - 1; i++) {
             builder.append("'");
             builder.append(elements[i].toString());
