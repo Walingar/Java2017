@@ -33,7 +33,7 @@ public class ArrayQueue {
     }
     // Post: (n' == n + 1) && (a'[i] == a[i] for i = 0 .. n - 1) && (a'[n] == element)
 
-    // Pre: capacity >= 0
+    // Pre: capacity > 0
     private void ensureCapacity(int capacity) {
         if (capacity <= elements.length) {
             return;
