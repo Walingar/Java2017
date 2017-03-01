@@ -3,23 +3,15 @@
 public class ArrayQueue {
     // Inv: (n >= 0) && (a[i] != null for i = 0 .. n - 1)
     private static int size = 0;
-<<<<<<< HEAD:Third homework/ArrayQueue.java
     private  Object[] elements = new Object[5];
     private  int head = 0;
     private  int tail = 0;
 
-=======
-    private Object[] elements = new Object[5];
-    private int head = 0;
-    private int tail = 0;
-    
->>>>>>> origin/master:ThirdHomeWork/ArrayQueue.java
     //Pre: true
     public String toStr() {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
         for(int i = 0; i < size - 1; i++) {
-<<<<<<< HEAD:Third homework/ArrayQueue.java
             builder.append(elements[(i + tail) % elements.length].toString());
             builder.append(", ");
         }
@@ -31,22 +23,8 @@ public class ArrayQueue {
     }
     //Post: R = ['head', ..., 'tail'] && (a' == a) && (n' == n)
 
-=======
-            builder.append("'");
-            builder.append(elements[i].toString());
-            builder.append("', ");
-        }
-        if (size > 0) {
-            builder.append("'" + elements[size - 1].toString() + "'");     
-        }
-        builder.append("]");           
-        return builder.toString();    
-    }
-    //Post: R = ['head', ..., 'tail'] && (a' == a) && (n' == n)
-    
->>>>>>> origin/master:ThirdHomeWork/ArrayQueue.java
     // Pre: element != null
-    public void enqueue(Object element) {
+    public  void enqueue(Object element) {
         assert element != null;
         ensureCapacity(++size + 1);
         elements[head] = element;
@@ -54,8 +32,8 @@ public class ArrayQueue {
     }
     // Post: (n' == n + 1) && (a'[i] == a[i] for i = 0 .. n - 1) && (a'[n] == element)
 
-    // Pre: capacity > 0
-    private void ensureCapacity(int capacity) {
+    // Pre: capacity >= 0
+    private  void ensureCapacity(int capacity) {
         if (capacity <= elements.length) {
             return;
         }
@@ -71,7 +49,7 @@ public class ArrayQueue {
     // (capacity > elements.length && elements'.length == (elements.length + 1) * 2) && (n' == n) && (a' = a)
 
     // Pre: n > 0
-    public Object dequeue() {
+    public  Object dequeue() {
         assert size > 0;
         size--;
         Object temp = elements[tail];
@@ -81,26 +59,26 @@ public class ArrayQueue {
     // Post: (n' = n - 1) && (a'[i - 1] == a[i] for i = 1 .. n - 1) && (R == a[0])
 
     // Pre: n > 0
-    public Object element() {
+    public  Object element() {
         assert size > 0;
         return elements[tail];
     }
     // Post: (n' == n) && (a' = a) && (R == a[0])
 
     // Pre: true
-    public boolean isEmpty() {
+    public  boolean isEmpty() {
         return size == 0;
     }
     // Post: ((size == 0 && R == true) || (size != 0 && R == false)) && (n' == n) && (a' == a)
 
     // Pre: true
-    public int size() {
+    public  int size() {
         return size;
     }
     // Pre: (R == n) && (n' == n) && (a' == a)
 
     // Pre: true
-    public void clear() {
+    public  void clear() {
         size = head = tail = 0;
     }
     // Post: n == 0

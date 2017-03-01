@@ -1,3 +1,4 @@
+
 public class QueueTest {
     public static void fill(ArrayQueue queue, ArrayQueueADT queueADT) {
         for (int i = 0; i < 10; i++) {
@@ -12,9 +13,6 @@ public class QueueTest {
             System.out.println(ArrayQueueModule.size() + " " + ArrayQueueModule.element() + " " + ArrayQueueModule.dequeue());
             System.out.println(ArrayQueueADT.size(queueADT) + " " + ArrayQueueADT.element(queueADT) + " " + ArrayQueueADT.dequeue(queueADT));
             System.out.println(queue.size() + " " + queue.element() + " " + queue.dequeue());
-            System.out.println(ArrayQueueModule.toStr());
-            System.out.println(ArrayQueueADT.toStr(queueADT));
-            System.out.println(queue.toStr());
         }
     }
 
